@@ -54,3 +54,22 @@ export const ListIcon = ({ className }: { className?: string }) => (
     />
   </svg>
 )
+
+export const PlusIcon = ({ className }: { className?: string }) => (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    width='800'
+    height='800'
+    fill='none'
+    viewBox='0 0 24 24'
+    className={className}
+  >
+    <path
+      stroke='#000'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      strokeWidth='2'
+      d='M4 12h16m-8-8v16'
+    />
+  </svg>
+)

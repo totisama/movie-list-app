@@ -1,4 +1,4 @@
-import { LogoIcon } from '@/icons'
+import { LogoIcon, PlusIcon } from '@/icons'
 import { MY_EMAIL_KEY, SIDE_MENU_ITEMS } from '@/consts'
 import { AsideItem } from '@/components/aside-item'
 import { gql } from 'graphql-request'
@@ -55,6 +55,13 @@ export default async function AsideMenu() {
             </Link>
           ))}
         </div>
+        <Link
+          href={'/new-list'}
+          className='flex bg-[#F33F3F] text-lg rounded-xl py-2 px-5 mt-5 font-medium items-center gap-1 justify-center text-black transition-all duration-500 hover:scale-110'
+        >
+          <PlusIcon className='h-5 w-5' />
+          Create List
+        </Link>
       </section>
     </div>
   )
