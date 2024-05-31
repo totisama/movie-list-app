@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '@/app/globals.css'
 import type React from 'react'
+import AsideMenu from '@/components/aside-menu'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,7 +18,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={inter.className}>{children}</body>
+      <body
+        id='app'
+        className={`${inter.className} h-screen p-2 gap-2`}
+      >
+        <aside className='[grid-area:aside] flex flex-col overflow-y-auto'>
+          <AsideMenu />
+        </aside>
+        <main className='[grid-area:main] rounded-lg bg-zinc-900 overflow-y-auto w-full'>
+          {children}
+        </main>
+      </body>
     </html>
   )
 }
