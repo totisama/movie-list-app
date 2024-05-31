@@ -40,7 +40,7 @@ export default function CreateListPage() {
               onClick={() => {
                 router.back()
               }}
-              className='bg-[#F33F3F] rounded-xl enabled:hover:scale-105 transition-all duration-300 ease-in-out disabled:opacity-80 enabled:hover:shadow-xl text-white p-2'
+              className='bg-[#F33F3F]  text-white p-2 rounded-xl transition-all duration-300 ease-in-out enabled:hover:shadow-xl enabled:hover:scale-105 disabled:opacity-80'
             >
               Cancel
             </button>
@@ -48,7 +48,7 @@ export default function CreateListPage() {
               disabled={isPending}
               onClick={newList}
               type='button'
-              className='bg-green-500 rounded-xl enabled:hover:scale-105 transition-all duration-300 ease-in-out disabled:opacity-80 enabled:hover:shadow-xl text-white p-2'
+              className='bg-green-500   text-white p-2rounded-xl transition-all duration-300 ease-in-out enabled:hover:shadow-xl enabled:hover:scale-105 disabled:opacity-80'
             >
               Create
             </button>
