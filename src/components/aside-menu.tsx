@@ -1,5 +1,5 @@
 import { LogoIcon, PlusIcon } from '@/icons'
-import { MY_EMAIL_KEY, SIDE_MENU_ITEMS } from '@/consts'
+import { MY_EMAIL_KEY, SIDE_MENU_ITEMS } from '@/constants'
 import { AsideItem } from '@/components/aside-item'
 import { gql } from 'graphql-request'
 import { client } from '@/lib/client'
@@ -48,7 +48,7 @@ export default async function AsideMenu() {
           {getMovieLists.map((list, index) => (
             <Link
               key={index}
-              className='flex text-white items-center py-2 px-5 font-medium transition-all duration-500 hover:text-[#F5C518] hover:scale-110'
+              className='flex text-white items-center py-2 px-5 font-medium transition-all duration-300 hover:text-[#FFB320] hover:scale-110'
               href={`/lists/${list.id}`}
             >
               {list.name}
@@ -57,7 +57,7 @@ export default async function AsideMenu() {
         </div>
         <Link
           href={'/new-list'}
-          className='flex bg-[#F33F3F] text-lg rounded-xl py-2 px-5 mt-5 font-medium items-center gap-1 justify-center text-black transition-all duration-500 hover:scale-110'
+          className='flex bg-[#F33F3F] text-lg rounded-xl py-2 px-5 mt-5 font-medium items-center gap-1 justify-center text-black transition-all duration-500 hover:scale-105'
         >
           <PlusIcon className='h-5 w-5' />
           Create List
