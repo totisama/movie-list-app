@@ -15,15 +15,15 @@ export const AsideItem = ({
   const isActive = pathname === href
 
   return (
-    <li
+    <div
       className={`rounded-3xl ${isActive && 'bg-gray-700/50'} hover:bg-gray-700/50`}
     >
       <Link
-        className='flex gap-2 text-white items-center py-2 px-5 font-medium transition duration-300 hover:scale-110'
+        className='flex gap-2 text-white items-center py-2 px-5 font-medium transition-all duration-300 hover:scale-110'
         href={href}
       >
         {children}
       </Link>
-    </li>
+    </div>
   )
 }

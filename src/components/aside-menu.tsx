@@ -1,15 +1,36 @@
 import { LogoIcon } from '@/icons'
-import { SIDE_MENU_ITEMS } from '@/consts'
-import { AsideItem } from './aside-item'
+import { MY_EMAIL_KEY, SIDE_MENU_ITEMS } from '@/consts'
+import { AsideItem } from '@/components/aside-item'
+import { gql } from 'graphql-request'
+import { client } from '@/lib/client'
+import { type MovieList } from '@/types'
+import Link from 'next/link'
 
-export default function AsideMenu() {
+const GET_MOVIES_LIST = gql`
+  query GetMovieLists($email: String!) {
+    getMovieLists(email: $email) {
+      id
+      name
+      email
+      created_at
+    }
+  }
+`
+
+export default async function AsideMenu() {
+  const { getMovieLists } = await client.request<{
+    getMovieLists: MovieList[]
+  }>(GET_MOVIES_LIST, {
+    email: MY_EMAIL_KEY,
+  })
+
   return (
-    <nav className='flex flex-col flex-1 gap-2'>
-      <div className='bg-[#121212] rounded-lg p-1'>
-        <div className='mt-2 mb-4 ml-3'>
+    <div className='flex flex-col flex-1 gap-2'>
+      <section className='bg-[#121212] py-5 rounded-lg'>
+        <div className='mb-8 ml-3'>
           <LogoIcon />
         </div>
-        <ul className='space-y-1'>
+        <nav className='space-y-1'>
           {SIDE_MENU_ITEMS.map((item, index) => (
             <AsideItem
               href={item.href}
@@ -19,12 +40,22 @@ export default function AsideMenu() {
               {item.value}
             </AsideItem>
           ))}
-        </ul>
-      </div>
-      <div className='bg-[#121212] rounded-lg p-2 flex-1'>
-        <h2 className='ml-2 text-base text-[#9A9A9A]'>My Lists</h2>
-        <ul></ul>
-      </div>
-    </nav>
+        </nav>
+      </section>
+      <section className='bg-[#121212] rounded-lg p-4 flex-1'>
+        <h2 className='text-base text-[#9A9A9A]'>My Lists</h2>
+        <div className='mt-5'>
+          {getMovieLists.map((list, index) => (
+            <Link
+              key={index}
+              className='flex text-white items-center py-2 px-5 font-medium transition-all duration-500 hover:text-[#F5C518] hover:scale-110'
+              href={`/lists/${list.id}`}
+            >
+              {list.name}
+            </Link>
+          ))}
+        </div>
+      </section>
+    </div>
   )
 }
