@@ -5,7 +5,7 @@ import { client } from '@/lib/client'
 import { type MovieList } from '@/types'
 import { gql } from 'graphql-request'
 
-const GET_MOVIES_LIST = gql`
+const GET_LISTS = gql`
   query GetMovieLists($email: String!) {
     getMovieLists(email: $email) {
       id
@@ -19,7 +19,7 @@ const GET_MOVIES_LIST = gql`
 export const getMovieLists = async () => {
   const { getMovieLists } = await client.request<{
     getMovieLists: MovieList[]
-  }>(GET_MOVIES_LIST, {
+  }>(GET_LISTS, {
     email: MY_EMAIL_KEY,
   })
 
