@@ -25,7 +25,7 @@ export default function RootLayout({
         <aside className='[grid-area:aside] flex flex-col overflow-y-auto'>
           <AsideMenu />
         </aside>
-        <main className='[grid-area:main] rounded-lg bg-zinc-900 overflow-y-auto w-full'>
+        <main className='[grid-area:main] rounded-lg bg-zinc-950 overflow-y-auto w-full'>
           {children}
         </main>
       </body>

@@ -26,7 +26,7 @@ export default async function AsideMenu() {
 
   return (
     <div className='flex flex-col flex-1 gap-2'>
-      <section className='bg-[#121212] py-5 rounded-lg'>
+      <section className='bg-[#080808] py-5 rounded-lg'>
         <div className='mb-8 ml-3'>
           <LogoIcon />
         </div>
@@ -42,7 +42,7 @@ export default async function AsideMenu() {
           ))}
         </nav>
       </section>
-      <section className='bg-[#121212] rounded-lg p-4 flex-1'>
+      <section className='bg-[#080808] rounded-lg p-4 flex-1'>
         <h2 className='text-base text-[#9A9A9A]'>My Lists</h2>
         <div className='mt-5'>
           {getMovieLists.map((list, index) => (
