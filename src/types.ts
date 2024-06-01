@@ -13,7 +13,7 @@ export interface MovieItem {
   movie: MoviePreview
 }
 
-interface MoviePreview {
+export interface MoviePreview {
   Title: string
   Year: string
   imdbID: string
