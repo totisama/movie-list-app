@@ -12,8 +12,9 @@ interface MovieCardProps {
 }
 
 export const MovieCard = ({ movie, index }: MovieCardProps) => {
-  const { name, image_url: image, year, rating } = movie
-  const href = `/movie/${encodeURIComponent(name.replaceAll(' ', '-'))}`
+  const { name, image_url: image, year, rating, imdb_url: imdbUrl } = movie
+  const id = imdbUrl.split('/')[2]
+  const href = `/movie/${id}`
   const [error, setError] = useState(false)
 
   return (
