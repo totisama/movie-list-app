@@ -32,7 +32,7 @@ export default async function AsideMenu() {
             <Link
               key={index}
               className='flex text-white items-center py-2 px-5 font-medium transition-all duration-300 hover:text-[#FFB320] hover:scale-110'
-              href={`/list/${list.id}`}
+              href={`/my-lists/${list.id}`}
             >
               {list.name}
             </Link>

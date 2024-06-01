@@ -13,7 +13,7 @@ export default function CreateListPage() {
     startTransition(async () => {
       const data = await createList(name)
 
-      router.push(`/list/${data.id}`)
+      router.push(`/my-lists/${data.id}`)
     })
   }
 
