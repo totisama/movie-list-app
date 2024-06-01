@@ -22,7 +22,6 @@ export const AddToList = ({
     startTransition(async () => {
       await addMovieToList(parseInt(listId), movieId)
     })
-    console.log('Adding movie to list', listId, movieId)
   }
 
   return (

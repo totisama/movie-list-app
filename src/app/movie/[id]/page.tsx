@@ -38,6 +38,7 @@ export default async function MoviePage({ params }: MoviePageProps) {
       <section className='flex flex-col mt-5 gap-10 items-center lg:flex-row lg:items-start lg:justify-center lg:gap-24'>
         <div className='flex flex-col items-start gap-5 lg:w-1/3 lg:h-full lg:max-h-[500px]'>
           <Image
+            priority
             className='rounded-3xl'
             width={500}
             height={500}

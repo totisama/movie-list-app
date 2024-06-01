@@ -4,7 +4,7 @@ export const MY_EMAIL_KEY = 'rodrigosamayoam@icloud.com'
 
 export const SIDE_MENU_ITEMS = [
   {
-    value: 'Home',
+    value: 'Movies',
     href: '/',
     icon: () => {
       return <HomeIcon />
@@ -12,8 +12,8 @@ export const SIDE_MENU_ITEMS = [
     alt: 'Home Icon',
   },
   {
-    value: 'Lists',
-    href: '/lists',
+    value: 'My lists',
+    href: '/my-lists',
     icon: () => {
       return <ListIcon />
     },
