@@ -5,7 +5,7 @@ export default async function Home() {
   const { movies } = await useMovies({})
 
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between pt-10 px-10'>
+    <div className='flex min-h-screen flex-col items-center justify-between pt-10 px-10'>
       <h1 className='text-6xl text-[#F33F3F]'>Movies</h1>
       <section className='mt-10 flex justify-center flex-wrap gap-5'>
         {movies.map((movie, index) => (
@@ -16,6 +16,6 @@ export default async function Home() {
           />
         ))}
       </section>
-    </main>
+    </div>
   )
 }
