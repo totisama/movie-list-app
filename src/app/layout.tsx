@@ -3,6 +3,8 @@ import { Nunito } from 'next/font/google'
 import '@/app/globals.css'
 import type React from 'react'
 import AsideMenu from '@/components/aside-menu'
+import { Suspense } from 'react'
+import Loading from './loading'
 
 const nunito = Nunito({ subsets: ['latin'] })
 
@@ -26,7 +28,7 @@ export default function RootLayout({
           <AsideMenu />
         </aside>
         <main className='[grid-area:main] rounded-lg bg-zinc-950 overflow-y-auto w-full'>
-          {children}
+          <Suspense fallback={<Loading />}>{children}</Suspense>
         </main>
       </body>
     </html>
