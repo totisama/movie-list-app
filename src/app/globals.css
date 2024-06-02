@@ -32,3 +32,17 @@ body {
   grid-template-columns: 280px 1fr;
   grid-template-rows: 1fr auto;
 }
+
+ul.react-autocomplete-input {
+  background: rgb(var(--background-start-rgb));
+  border-radius: 4px;
+}
+
+ul.react-autocomplete-input > li {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+ul.react-autocomplete-input > li.active {
+  background: rgba(255, 255, 255, 0.1);
+}
