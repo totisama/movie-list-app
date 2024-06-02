@@ -27,7 +27,7 @@ export default async function ListPage({
           </RemoveButton>
         </div>
       </div>
-      <section className='mt-10 flex flex-wrap'>
+      <section className='mt-10 flex justify-center px-10 flex-wrap gap-5 lg:justify-start'>
         {movies.map((movie, index) => (
           <MoviePreview
             index={index}
