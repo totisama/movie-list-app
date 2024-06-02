@@ -3,6 +3,7 @@ import { SIDE_MENU_ITEMS } from '@/constants'
 import { AsideItem } from '@/components/aside-item'
 import Link from 'next/link'
 import { getMovieLists } from '@/actions/get-movie-lists'
+import AutocompleteInput from './autocomplete-input'
 
 export default async function AsideMenu() {
   const movieLists = await getMovieLists()
@@ -12,6 +13,9 @@ export default async function AsideMenu() {
       <section className='bg-[#080808] py-5 rounded-lg'>
         <div className='mb-8 ml-3'>
           <LogoIcon />
+        </div>
+        <div className='px-5 mb-5'>
+          <AutocompleteInput />
         </div>
         <nav className='space-y-1'>
           {SIDE_MENU_ITEMS.map((item, index) => (
