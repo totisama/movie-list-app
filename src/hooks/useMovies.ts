@@ -1,10 +1,7 @@
-import { type ImdbMovie } from '@/types'
+import { getMovies } from '@/actions/get-movies'
 
 export const useMovies = async ({ id = '' }: { id?: string }) => {
-  const res = await fetch(
-    'https://raw.githubusercontent.com/theapache64/top250/master/top250_min.json?authuser=1'
-  )
-  let movies: ImdbMovie[] = await res.json()
+  let movies = await getMovies()
 
   if (id !== '') {
     movies = movies.filter((movie) => movie.imdb_url.includes(`/${id}`))
