@@ -11,7 +11,6 @@ interface MovieCardProps {
 export const MoviePreview = ({ movie, index }: MovieCardProps) => {
   const { Title, Year, Poster, imdbID, imdbRating } = movie
   const href = `/movie/${imdbID}`
-  console.log(movie)
 
   return (
     <CardAnimation>
