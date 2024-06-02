@@ -2,6 +2,7 @@ import { deleteList } from '@/actions/delete-list'
 import { getMovieList } from '@/actions/get-movie-list'
 import { MoviePreview } from '@/components/movie-preview'
 import { RemoveButton } from '@/components/remove-button'
+import Link from 'next/link'
 
 export default async function ListPage({
   params: { id },
@@ -43,6 +44,17 @@ export default async function ListPage({
         </div>
       </div>
       <section className='mt-10 flex justify-center px-10 flex-wrap gap-5 lg:justify-start'>
+        {moviesList.length === 0 && (
+          <div className='flex flex-col justify-center items-center gap-3'>
+            <h2 className='text-4xl text-white'>No movies added yet</h2>
+            <Link
+              className='bg-[#F33F3F] py-1 px-2 rounded-2xl'
+              href='/'
+            >
+              Search movies
+            </Link>
+          </div>
+        )}
         {moviesList.map((movie, index) => (
           <MoviePreview
             index={index}
