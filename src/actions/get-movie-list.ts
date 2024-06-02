@@ -17,6 +17,7 @@ const GET_MOVIES_LISTS = gql`
         Poster
         imdbID
         Type
+        imdbRating
       }
     }
     getMovieList(id: $getMovieListId) {
