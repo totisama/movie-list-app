@@ -29,9 +29,9 @@ export default async function ListPage({
       <div className='w-full flex items-center justify-around'>
         <div className='w-1/3' />
         <div className='w-1/3 overflow-clip'>
-          <h1 className='text-4xl'>{movieList.name}</h1>
+          <h1 className='text-5xl text-[#F33F3F]'>{movieList.name}</h1>
         </div>
-        <div>
+        <div className='flex flex-col items-center'>
           <RemoveButton
             id={id}
             removeFunction={deleteList}
@@ -39,6 +39,7 @@ export default async function ListPage({
           >
             Delete list
           </RemoveButton>
+          <small>Right click on movie to display menu</small>
         </div>
       </div>
       <section className='mt-10 flex justify-center px-10 flex-wrap gap-5 lg:justify-start'>
@@ -46,7 +47,8 @@ export default async function ListPage({
           <MoviePreview
             index={index}
             key={movie.id}
-            movie={movie.movie}
+            movie={movie}
+            listId={parseInt(id)}
           />
         ))}
       </section>
