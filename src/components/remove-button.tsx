@@ -31,7 +31,7 @@ export const RemoveButton = ({
     <button
       disabled={isPending}
       onClick={removeList}
-      className='py-1 px-2 text-base rounded-xl bg-[#F33F3F] duration-300 ease-in-out transition-all enabled:hover:scale-105 disabled:opacity-60'
+      className='w-1/2 py-1 px-2 text-base rounded-xl bg-[#F33F3F] duration-300 ease-in-out transition-all enabled:hover:scale-105 disabled:opacity-60'
     >
       {children}
     </button>
