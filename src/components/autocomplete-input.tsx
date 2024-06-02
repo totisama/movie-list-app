@@ -61,6 +61,7 @@ export default function AutocompleteInput() {
   useEffect(() => {
     whatRoute()
     setValue('')
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname])
 
   return (
