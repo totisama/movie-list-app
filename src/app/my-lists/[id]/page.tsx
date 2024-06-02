@@ -1,7 +1,7 @@
 import { deleteList } from '@/actions/delete-list'
 import { getMovieList } from '@/actions/get-movie-list'
+import { MoviePreview } from '@/components/movie-preview'
 import { RemoveButton } from '@/components/remove-button'
-import Image from 'next/image'
 
 export default async function ListPage({
   params: { id },
@@ -27,21 +27,13 @@ export default async function ListPage({
           </RemoveButton>
         </div>
       </div>
-      <section className='flex flex-wrap'>
-        {movies.map((movie) => (
-          <article
+      <section className='mt-10 flex flex-wrap'>
+        {movies.map((movie, index) => (
+          <MoviePreview
+            index={index}
             key={movie.id}
-            className='w-1/4 p-2'
-          >
-            <Image
-              width={300}
-              height={300}
-              src={movie.movie.Poster}
-              alt={movie.movie.Title}
-            />
-            <h2>{movie.movie.Title}</h2>
-            <p>{movie.movie.Year}</p>
-          </article>
+            movie={movie.movie}
+          />
         ))}
       </section>
     </div>
