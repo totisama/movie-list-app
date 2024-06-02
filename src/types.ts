@@ -19,6 +19,7 @@ export interface MoviePreview {
   imdbID: string
   Type: string
   Poster: string
+  imdbRating: string
 }
 
 export interface ImdbMovie {
