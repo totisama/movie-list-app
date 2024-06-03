@@ -4,6 +4,7 @@ import { MY_EMAIL_KEY } from '@/constants'
 import { client } from '@/lib/client'
 import { type MovieList } from '@/types'
 import { gql } from 'graphql-request'
+import { revalidatePath } from 'next/cache'
 
 const CREATE_LIST = gql`
   mutation CreateList($input: CreateListInput!) {
@@ -25,6 +26,8 @@ export async function createList(nameValue: string) {
       name: nameValue,
     },
   })
+
+  revalidatePath('/', 'layout')
 
   return createList
 }
