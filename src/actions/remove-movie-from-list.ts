@@ -10,8 +10,6 @@ const REMOVE_MOVIE = gql`
 `
 
 export const removeMovieFromList = async (movieId: number, listId: number) => {
-  console.log('movieId', movieId)
-  console.log('listId', listId)
   await client.request(REMOVE_MOVIE, {
     removeMovieId: movieId,
     listId,
