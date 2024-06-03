@@ -2,6 +2,7 @@
 
 import { client } from '@/lib/client'
 import { gql } from 'graphql-request'
+import { revalidatePath } from 'next/cache'
 
 const REMOVE_MOVIE = gql`
   mutation Mutation($removeMovieId: Int!, $listId: Int!) {
@@ -10,10 +11,10 @@ const REMOVE_MOVIE = gql`
 `
 
 export const removeMovieFromList = async (movieId: number, listId: number) => {
-  console.log('movieId', movieId)
-  console.log('listId', listId)
   await client.request(REMOVE_MOVIE, {
     removeMovieId: movieId,
     listId,
   })
+
+  revalidatePath('/', 'layout')
 }
